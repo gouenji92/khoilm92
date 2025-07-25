@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trang cá nhân của tôi</title>
 
-  <!-- Google Fonts: Roboto -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Xin chào! Tôi là Khoi</h1>
-    <nav>
-      <ul>
-        <li><a href="#gioithieu">Giới thiệu</a></li>
-        <li><a href="#duan">Dự án</a></li>
-        <li><a href="#lienhe">Liên hệ</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>Xin chào! Tôi là <span class="highlight">Khôi</span></h1>
+      <nav>
+        <ul>
+          <li><a href="#gioithieu">Giới thiệu</a></li>
+          <li><a href="#duan">Dự án</a></li>
+          <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section id="gioithieu">
-    <h2>Giới thiệu</h2>
-    <p>Tôi đang học làm website cá nhân với GitHub Pages.</p>
-    <img src="images/avatar.jpg" alt="Ảnh đại diện" width="200">
-  </section>
+  <main class="container">
+    <section id="gioithieu">
+      <h2>🧑‍💻 Giới thiệu</h2>
+      <p>Tôi đang học làm website cá nhân với GitHub Pages.</p>
+      <img src="images/avatar.jpg" alt="Ảnh đại diện" class="avatar" />
+    </section>
 
-  <section id="duan">
-    <h2>Dự án</h2>
-    <ul>
-      <li>Dự án 1: <a href="#">Phân tích dữ liệu</a></li>
-      <li>Dự án 2: <a href="#">Ứng dụng Python</a></li>
-    </ul>
-  </section>
+    <section id="duan">
+      <h2>🚀 Dự án</h2>
+      <ul>
+        <li><a href="#">📊 Phân tích dữ liệu</a></li>
+        <li><a href="#">🐍 Ứng dụng Python</a></li>
+      </ul>
+    </section>
 
-  <section id="lienhe">
-    <h2>Liên hệ</h2>
-    <p>Email: example@gmail.com</p>
-    <p>Facebook: <a href="https://facebook.com">facebook.com/le.khoi.1202</a></p>
-  </section>
+    <section id="lienhe">
+      <h2>📬 Liên hệ</h2>
+      <p><strong>Email:</strong> khoi.2274601080008@vanlanguni.vn</p>
+      <p><strong>Facebook:</strong> <a href="https://facebook.com/le.khoi.1202" target="_blank">facebook.com/le.khoi.1202</a></p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 KhoiLM. All rights reserved.</p>
