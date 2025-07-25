@@ -17,12 +17,19 @@ body {
   color: var(--text);
   margin: 0;
   transition: background 0.3s, color 0.3s;
+  scroll-behavior: smooth;
 }
 
 .container {
   max-width: 800px;
   margin: auto;
   padding: 1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 header {
@@ -38,6 +45,7 @@ nav ul {
   display: flex;
   gap: 1rem;
   padding: 0;
+  margin: 0;
 }
 
 nav a {
@@ -56,6 +64,8 @@ nav a:hover {
   border-radius: 8px;
   box-shadow: 0 0 10px #00000033;
   transition: transform 0.3s;
+  display: block;
+  margin: 20px auto;
 }
 
 .avatar:hover {
@@ -75,4 +85,19 @@ footer {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.highlight {
+  color: #ffd700;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
