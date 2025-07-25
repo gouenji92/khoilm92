@@ -1,8 +1,8 @@
 :root {
-  --bg: #ffffff;
+  --bg: linear-gradient(to bottom, #191970, #ffffff);
   --text: #000000;
-  --primary: #1e90ff;
-  --card: #f0f0f0;
+  --primary: #9370db;
+  --card: rgba(255, 255, 255, 0.5);
 }
 
 body.dark {
@@ -13,10 +13,10 @@ body.dark {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   margin: 0;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.5s, color 0.5s;
   scroll-behavior: smooth;
 }
 
@@ -34,10 +34,12 @@ body {
 
 header {
   background: var(--card);
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -61,8 +63,8 @@ nav a:hover {
 
 .avatar {
   max-width: 150px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #00000033;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #9370db66;
   transition: transform 0.3s;
   display: block;
   margin: 20px auto;
@@ -81,14 +83,25 @@ footer {
 }
 
 #toggle-theme {
-  background: none;
+  background: #9370db;
   border: none;
-  font-size: 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  padding: 6px 10px;
+  border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 0 8px #9370db99;
+  transition: all 0.3s;
+}
+
+#toggle-theme:hover {
+  background: #7a5fbd;
+  box-shadow: 0 0 12px #9370db;
 }
 
 .highlight {
-  color: #ffd700;
+  color: #9370db;
+  text-shadow: 0 0 5px #bda0ff;
 }
 
 section {
