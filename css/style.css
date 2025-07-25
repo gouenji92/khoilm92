@@ -1,8 +1,8 @@
 :root {
-  --bg: linear-gradient(to bottom, #191970, #ffffff);
-  --text: #000000;
-  --primary: #9370db;
-  --card: rgba(255, 255, 255, 0.5);
+  --bg: linear-gradient(to bottom, #12003b, #9370db);
+  --text: #ffffff;
+  --primary: #caaaff;
+  --card: rgba(255, 255, 255, 0.1);
 }
 
 body.dark {
@@ -12,7 +12,8 @@ body.dark {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Courier Prime', monospace;
+  font-size: 18px;
   background: var(--bg);
   color: var(--text);
   margin: 0;
@@ -82,26 +83,37 @@ footer {
   font-size: 0.9rem;
 }
 
-#toggle-theme {
-  background: #9370db;
+#toggle-theme, #back-to-top {
+  position: fixed;
+  bottom: 20px;
+  padding: 12px;
   border: none;
-  color: white;
-  font-size: 1.2rem;
-  padding: 6px 10px;
-  border-radius: 5px;
+  font-size: 20px;
+  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 8px #9370db99;
-  transition: all 0.3s;
+  box-shadow: 0 0 12px #9370db99;
+  z-index: 1000;
+  background-color: #4b0082;
+  color: white;
+  transition: background 0.3s, transform 0.2s;
 }
 
-#toggle-theme:hover {
-  background: #7a5fbd;
-  box-shadow: 0 0 12px #9370db;
+#toggle-theme:hover, #back-to-top:hover {
+  background-color: #6a0dad;
+  transform: scale(1.1);
+}
+
+#toggle-theme {
+  left: 20px;
+}
+
+#back-to-top {
+  right: 20px;
 }
 
 .highlight {
-  color: #9370db;
-  text-shadow: 0 0 5px #bda0ff;
+  color: #caaaff;
+  text-shadow: 0 0 5px #e0d3ff;
 }
 
 section {
