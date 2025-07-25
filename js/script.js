@@ -1,11 +1,11 @@
-// Nút dark mode
+// Toggle dark mode
 const toggleBtn = document.getElementById("toggle-theme");
 toggleBtn.onclick = () => {
   document.body.classList.toggle("dark");
   toggleBtn.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
 };
 
-// Scroll reveal hiệu ứng section
+// Scroll reveal
 const sections = document.querySelectorAll("section");
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -17,3 +17,6 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
+// Back to top
+const backToTop = document.getElementById("back-to-top");
+backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
