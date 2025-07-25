@@ -16,3 +16,4 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 sections.forEach(section => observer.observe(section));
+
