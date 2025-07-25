@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trang cá nhân của tôi</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- CSS -->
+  <title>Trang cá nhân của Khôi</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Xin chào! Tôi là <span class="highlight">Khôi</span></h1>
+      <button id="toggle-theme">🌙</button>
       <nav>
         <ul>
           <li><a href="#gioithieu">Giới thiệu</a></li>
@@ -50,5 +47,14 @@
   <footer>
     <p>&copy; 2025 KhoiLM. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Dark mode toggle
+    const toggleBtn = document.getElementById("toggle-theme");
+    toggleBtn.onclick = () => {
+      document.body.classList.toggle("dark");
+      toggleBtn.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
+    };
+  </script>
 </body>
 </html>
