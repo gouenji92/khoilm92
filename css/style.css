@@ -33,22 +33,48 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- HERO SECTION --- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.intro-text {
+  flex: 1 1 60%;
+}
+
+.avatar-large {
+  width: 180px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #9370db66;
+  transition: transform 0.3s;
+}
+
+.avatar-large:hover {
+  transform: scale(1.05);
+}
+
+/* --- HEADER --- */
 header {
   background: var(--card);
   padding: 1.5rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
+/* --- NAVIGATION --- */
 nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
-  margin: 0;
+  margin: 1rem 0 0 0;
 }
 
 nav a {
@@ -62,19 +88,39 @@ nav a:hover {
   color: var(--primary);
 }
 
-.avatar {
-  max-width: 150px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #9370db66;
-  transition: transform 0.3s;
-  display: block;
-  margin: 20px auto;
+/* --- SECTION COMMON --- */
+section {
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.avatar:hover {
-  transform: scale(1.05);
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* --- LIST --- */
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* --- CONTACT SECTION --- */
+.contact ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact li {
+  margin-bottom: 0.5rem;
+}
+
+/* --- FOOTER --- */
 footer {
   text-align: center;
   padding: 1rem;
@@ -83,6 +129,7 @@ footer {
   font-size: 0.9rem;
 }
 
+/* --- BUTTONS --- */
 #toggle-theme, #back-to-top {
   position: fixed;
   bottom: 20px;
@@ -111,30 +158,36 @@ footer {
   right: 20px;
 }
 
+/* --- TEXT HIGHLIGHT --- */
 .highlight {
   color: #caaaff;
   text-shadow: 0 0 5px #e0d3ff;
 }
 
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Tất cả chữ màu trắng */
+/* --- GLOBAL TEXT COLOR OVERRIDE --- */
 h1, h2, h3, h4, h5, h6,
 p, li, a, span, strong {
   color: white;
 }
 
-/* Đảm bảo link không đổi màu khi click */
+/* --- LINK COLOR ENFORCEMENT --- */
 a:link, a:visited {
   color: white;
   text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .avatar-large {
+    margin-top: 1rem;
+  }
+
+  nav ul {
+    justify-content: flex-start;
+  }
 }
