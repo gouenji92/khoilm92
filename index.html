@@ -3,118 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lê Minh Khôi | Portfolio</title>
+  <title>Trang cá nhân của Lê Minh Khôi</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
-
-  <header class="site-header">
-    <div class="container header-content">
-      <h1 class="logo">Lê Minh Khôi</h1>
-      <nav class="main-nav">
+  <header class="hero-section" data-aos="fade-down">
+    <div class="container">
+      <h1>Xin chào! Tôi là <span class="highlight">Lê Minh Khôi</span></h1>
+      <p id="typewriter" class="subtitle"></p>
+      <button id="toggle-theme" class="tooltip" data-tooltip="Chuyển chế độ tối/sáng">🌙</button>
+      <button id="lang-toggle" class="tooltip" data-tooltip="Chuyển ngôn ngữ">🌐</button>
+      <nav>
         <ul>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#skills">Kỹ năng</a></li>
-          <li><a href="#projects">Dự án</a></li>
-          <li><a href="#education">Học vấn</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
+          <li><a href="#gioithieu">Giới thiệu</a></li>
+          <li><a href="#kynang">Kỹ năng</a></li>
+          <li><a href="#duan">Dự án</a></li>
+          <li><a href="#hocvan">Học vấn</a></li>
+          <li><a href="#lienhe">Liên hệ</a></li>
         </ul>
       </nav>
-      <button id="toggle-theme" class="tooltip" data-tooltip="Chuyển chế độ sáng/tối">🌙</button>
     </div>
+    <svg viewBox="0 0 1440 320" class="wave-svg"><path fill="#fff" fill-opacity="0.1" d="M0,96L60,112C120,128,240,160,360,186.7C480,213,600,235,720,213.3C840,192,960,128,1080,101.3C1200,75,1320,85,1380,90.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
   </header>
 
-  <section class="hero-section">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h2>👋 Xin chào! Tôi là <span class="highlight">Khôi</span></h2>
-        <p id="typewriter"></p>
-        <a href="#projects" class="btn-primary">Xem Dự Án</a>
-      </div>
-      <div class="hero-image">
-        <img src="images/avatar.jpg" alt="Ảnh đại diện" />
-      </div>
-    </div>
-    <div class="wave"></div>
-  </section>
-
-  <section id="about" class="boxed-section">
-    <div class="container">
+  <main class="container">
+    <section id="gioithieu" class="boxed-section" data-aos="fade-up">
       <h2>🧑‍💻 Giới thiệu</h2>
-      <p>Tôi là sinh viên năm 3 tại Đại học Văn Lang, chuyên ngành Khoa học Máy tính. Tôi yêu thích việc phân tích dữ liệu và xây dựng các giải pháp công nghệ giúp giải quyết bài toán thực tế.</p>
-    </div>
-  </section>
+      <p>Tôi là sinh viên ngành Khoa học Máy tính tại Đại học Văn Lang. Tôi đam mê công nghệ, dữ liệu và thiết kế giao diện.</p>
+      <img src="images/avatar.jpg" alt="Ảnh đại diện" class="avatar" />
+    </section>
 
-  <section id="skills" class="boxed-section">
-    <div class="container">
+    <section id="kynang" class="boxed-section" data-aos="fade-up">
       <h2>🛠️ Kỹ năng</h2>
-      <div class="grid">
-        <div class="card">Python</div>
-        <div class="card">JavaScript</div>
-        <div class="card">HTML / CSS</div>
-        <div class="card">Git & GitHub</div>
-        <div class="card">SQL / MySQL</div>
-        <div class="card">Machine Learning</div>
-        <div class="card">Deep Learning</div>
-        <div class="card">React</div>
-        <div class="card">Node.js</div>
-        <div class="card">Docker</div>
-        <div class="card">Firebase</div>
-        <div class="card">Kubernetes</div>
-        <div class="card">PostgreSQL</div>
-        <div class="card">MongoDB</div>
-        <div class="card">Pandas</div>
-        <div class="card">NumPy</div>
-        <div class="card">Matplotlib</div>
-        <div class="card">Seaborn</div>
-        <div class="card">TensorFlow</div>
-        <div class="card">Keras</div>
-        <div class="card">OpenCV</div>
-        <div class="card">FastAPI</div>
-        <div class="card">Flask</div>
-        <div class="card">Postman</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="boxed-section">
-    <div class="container">
-      <h2>🚀 Dự án</h2>
-      <div class="grid">
-        <!-- Giả lập nhiều project -->
-        " + "        <div class="card"><h3>Dự án " + "</h3><p>Mô tả dự án.</p></div>
-".repeat(100) + "      </div>
-    </div>
-  </section>
-
-  <section id="education" class="boxed-section">
-    <div class="container">
-      <h2>🎓 Học vấn</h2>
       <ul>
-        <li>2022 - Nay: Đại học Văn Lang – Khoa Kỹ thuật Cơ - Điện và Máy tính</li>
-        <li>2019 - 2022: THPT Cà Mau, TP. Cà Mau</li>
+        <li>Python, JavaScript, Java</li>
+        <li>Phân tích dữ liệu: Pandas, NumPy, Matplotlib</li>
+        <li>HTML, CSS, Bootstrap, Responsive Design</li>
+        <li>Git, GitHub, CI/CD cơ bản</li>
+        <li>OpenCV, TensorFlow cơ bản</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="boxed-section">
-    <div class="container">
+    <section id="duan" class="boxed-section" data-aos="fade-up">
+      <h2>🚀 Dự án</h2>
+      <div id="projects" class="grid"></div>
+    </section>
+
+    <section id="hocvan" class="boxed-section" data-aos="fade-up">
+      <h2>🎓 Học vấn</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Đại học Văn Lang</h3>
+            <p>2022 - Nay: Khoa Kỹ thuật Cơ - Điện & Máy tính</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>THPT Cà Mau</h3>
+            <p>2019 - 2022: TP. Cà Mau</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lienhe" class="boxed-section" data-aos="fade-up">
       <h2>📬 Liên hệ</h2>
-      <p>Email: khoi.2274601080008@vanlanguni.vn</p>
-      <p>Facebook: <a href="https://facebook.com/le.khoi.1202" target="_blank">facebook.com/le.khoi.1202</a></p>
-      <p>GitHub: <a href="https://github.com/gouenji92" target="_blank">github.com/gouenji92</a></p>
-      <p>Kaggle: <a href="https://www.kaggle.com/khil2131" target="_blank">kaggle.com/khil2131</a></p>
-    </div>
-  </section>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Tên của bạn" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Nội dung" required></textarea>
+        <button type="submit">Gửi</button>
+      </form>
+      <p><strong>Hoặc:</strong></p>
+      <ul>
+        <li>📧 khoi.2274601080008@vanlanguni.vn</li>
+        <li><a href="https://facebook.com/le.khoi.1202" target="_blank">Facebook</a></li>
+        <li><a href="https://github.com/gouenji92" target="_blank">GitHub</a></li>
+        <li><a href="https://kaggle.com/khil2131" target="_blank">Kaggle</a></li>
+      </ul>
+    </section>
+  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Lê Minh Khôi. All rights reserved.</p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Lê Minh Khôi. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
