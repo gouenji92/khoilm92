@@ -8,157 +8,16 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    :root {
-      --bg: linear-gradient(to bottom, #12003b, #4b0082);
-      --text: #ffffff;
-      --primary: #caaaff;
-      --card: rgba(255, 255, 255, 0.05);
-      --accent: #ffdd57;
-      --transition: all 0.3s ease;
-    }
-    body.dark {
-      --bg: #0e0e0e;
-      --text: #f5f5f5;
-      --card: #1e1e1e;
-    }
-    * {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
-    body {
-      font-family: 'Fira Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-      transition: var(--transition);
-    }
-    header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-image: url('images/hero-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      color: var(--text);
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-    header .content {
-      position: relative;
-      z-index: 2;
-    }
-    h1 {
-      font-size: 3.2rem;
-      margin-bottom: 1rem;
-    }
-    .highlight {
-      color: var(--accent);
-    }
-    .btn {
-      background: var(--accent);
-      border: none;
-      padding: 0.7rem 1.2rem;
-      margin: 0.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .btn:hover {
-      transform: scale(1.05);
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      z-index: 1000;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: var(--accent);
-      transition: width 0.3s;
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    section {
-      padding: 4rem 2rem;
-      background: var(--card);
-      margin: 2rem auto;
-      max-width: 1000px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #0003;
-      backdrop-filter: blur(10px);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      opacity: 0.6;
-    }
-    .language-toggle, .theme-toggle {
-      cursor: pointer;
-      font-size: 1.3rem;
-      color: var(--accent);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: var(--card);
-      padding: 1.2rem;
-      border-radius: 10px;
-      transition: var(--transition);
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
-    }
-    @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      nav ul { flex-direction: column; gap: 1rem; }
-    }
-  </style>
 </head>
 <body>
   <nav>
     <div>
-      <span class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></span>
-      <span class="language-toggle" onclick="toggleLanguage()"><i class="fas fa-language"></i></span>
+      <span class="theme-toggle" onclick="toggleTheme()" title="Chuyển giao diện">
+        <i class="fas fa-moon"></i>
+      </span>
+      <span class="language-toggle" onclick="toggleLanguage()" title="Chuyển ngôn ngữ">
+        <i class="fas fa-language"></i>
+      </span>
     </div>
     <ul>
       <li><a href="#about">Giới thiệu</a></li>
@@ -170,18 +29,19 @@
   <header>
     <div class="content" data-aos="fade-up">
       <h1>Xin chào! Tôi là <span class="highlight">Lê Minh Khôi</span></h1>
-      <p>Người đam mê công nghệ và thiết kế.</p>
+      <p>Người đam mê công nghệ, dữ liệu & thiết kế.</p>
       <a href="#contact" class="btn">Liên hệ ngay</a>
     </div>
   </header>
 
   <main>
     <section id="about" data-aos="fade-right">
-      <h2>Ối nội dung giới thiệu bản thân tại đây</h2>
+      <h2>🧑‍💻 Giới thiệu</h2>
+      <p>Tôi là sinh viên Khoa học Máy tính tại Đại học Văn Lang. Tôi yêu thích việc xây dựng sản phẩm số hiện đại và hữu ích.</p>
     </section>
 
     <section id="skills" data-aos="fade-left">
-      <h2>Kỹ năng</h2>
+      <h2>🛠️ Kỹ năng</h2>
       <ul>
         <li>Python, JavaScript, Java</li>
         <li>TensorFlow, OpenCV, Pandas</li>
@@ -190,22 +50,27 @@
     </section>
 
     <section id="projects" data-aos="zoom-in">
-      <h2>Dự án</h2>
+      <h2>🚀 Dự án</h2>
       <div class="grid">
         <div class="card">
           <h3>Phát hiện lao phổi</h3>
-          <p>Mô hình Deep Learning nhận diện lao qua ảnh X-quang.</p>
+          <p>Mô hình Deep Learning nhận diện lao từ ảnh X-quang.</p>
         </div>
         <div class="card">
-          <h3>Trang web portfolio</h3>
-          <p>Trang cá nhân giới thiệu và liên hệ nhanh chính chủ.</p>
+          <h3>Website cá nhân</h3>
+          <p>Trang portfolio responsive có dark mode và hiệu ứng AOS.</p>
         </div>
       </div>
     </section>
 
     <section id="contact" data-aos="fade-up">
-      <h2>Liên hệ</h2>
-      <p>Gửi email: khoi.2274601080008@vanlanguni.vn</p>
+      <h2>📬 Liên hệ</h2>
+      <p>Email: <strong>khoi.2274601080008@vanlanguni.vn</strong></p>
+      <p>
+        <a href="https://facebook.com/le.khoi.1202" target="_blank">Facebook</a> |
+        <a href="https://github.com/gouenji92" target="_blank">GitHub</a> |
+        <a href="https://kaggle.com/khil2131" target="_blank">Kaggle</a>
+      </p>
     </section>
   </main>
 
@@ -214,25 +79,6 @@
   </footer>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    function toggleLanguage() {
-      const lang = document.documentElement.lang === 'vi' ? 'en' : 'vi';
-      document.documentElement.lang = lang;
-      alert("Tính năng đang được phát triển!");
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-      }
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
