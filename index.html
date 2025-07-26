@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <header class="site-header">
     <div class="container header-content">
       <h1 class="logo">Lê Minh Khôi</h1>
@@ -21,7 +24,7 @@
           <li><a href="#contact">Liên hệ</a></li>
         </ul>
       </nav>
-      <button id="toggle-theme" title="Chuyển theme">🌙</button>
+      <button id="toggle-theme" class="tooltip" data-tooltip="Chuyển chế độ sáng/tối">🌙</button>
     </div>
   </header>
 
@@ -29,18 +32,15 @@
     <div class="container hero-content">
       <div class="hero-text">
         <h2>👋 Xin chào! Tôi là <span class="highlight">Khôi</span></h2>
-        <p>Một sinh viên công nghệ thông tin, đam mê phân tích dữ liệu, thiết kế hệ thống và học máy.</p>
+        <p id="typewriter"></p>
         <a href="#projects" class="btn-primary">Xem Dự Án</a>
       </div>
       <div class="hero-image">
         <img src="images/avatar.jpg" alt="Ảnh đại diện" />
       </div>
     </div>
+    <div class="wave"></div>
   </section>
-
-  <!-- Bổ sung thêm các section để đạt 1000 dòng -->
-  <!-- Tạo nhiều mục kỹ năng, dự án, bài viết, testimonial... -->
-  <!-- Dưới đây là ví dụ nhân bản có nội dung khác nhau -->
 
   <section id="about" class="boxed-section">
     <div class="container">
@@ -49,7 +49,6 @@
     </div>
   </section>
 
-  <!-- Nhân bản kỹ năng để tăng nội dung -->
   <section id="skills" class="boxed-section">
     <div class="container">
       <h2>🛠️ Kỹ năng</h2>
@@ -61,19 +60,33 @@
         <div class="card">SQL / MySQL</div>
         <div class="card">Machine Learning</div>
         <div class="card">Deep Learning</div>
-      
+        <div class="card">React</div>
+        <div class="card">Node.js</div>
+        <div class="card">Docker</div>
+        <div class="card">Firebase</div>
+        <div class="card">Kubernetes</div>
+        <div class="card">PostgreSQL</div>
+        <div class="card">MongoDB</div>
+        <div class="card">Pandas</div>
+        <div class="card">NumPy</div>
+        <div class="card">Matplotlib</div>
+        <div class="card">Seaborn</div>
+        <div class="card">TensorFlow</div>
+        <div class="card">Keras</div>
+        <div class="card">OpenCV</div>
+        <div class="card">FastAPI</div>
+        <div class="card">Flask</div>
+        <div class="card">Postman</div>
       </div>
     </div>
   </section>
 
-  <!-- Nhân bản mục Dự án -->
   <section id="projects" class="boxed-section">
     <div class="container">
       <h2>🚀 Dự án</h2>
       <div class="grid">
-        <!-- Chèn nhiều project để tăng độ dài -->
-        <!-- Giả định mỗi project có nội dung riêng -->
-" + "        <div class="card"><h3>Dự án " + "</h3><p>Mô tả dự án.</p></div>
+        <!-- Giả lập nhiều project -->
+        " + "        <div class="card"><h3>Dự án " + "</h3><p>Mô tả dự án.</p></div>
 ".repeat(100) + "      </div>
     </div>
   </section>
