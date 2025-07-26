@@ -3,98 +3,236 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trang cá nhân của Lê Minh Khôi</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Portfolio | Lê Minh Khôi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --bg: linear-gradient(to bottom, #12003b, #4b0082);
+      --text: #ffffff;
+      --primary: #caaaff;
+      --card: rgba(255, 255, 255, 0.05);
+      --accent: #ffdd57;
+      --transition: all 0.3s ease;
+    }
+    body.dark {
+      --bg: #0e0e0e;
+      --text: #f5f5f5;
+      --card: #1e1e1e;
+    }
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      font-family: 'Fira Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: var(--transition);
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: var(--text);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    header .content {
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      color: var(--accent);
+    }
+    .btn {
+      background: var(--accent);
+      border: none;
+      padding: 0.7rem 1.2rem;
+      margin: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 4rem 2rem;
+      background: var(--card);
+      margin: 2rem auto;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #0003;
+      backdrop-filter: blur(10px);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+    .language-toggle, .theme-toggle {
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.2rem;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      nav ul { flex-direction: column; gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
-  <div id="particles-js"></div>
-  <header class="hero-section" data-aos="fade-down">
-    <div class="container">
-      <h1>Xin chào! Tôi là <span class="highlight">Lê Minh Khôi</span></h1>
-      <p id="typewriter" class="subtitle"></p>
-      <button id="toggle-theme" class="tooltip" data-tooltip="Chuyển chế độ tối/sáng">🌙</button>
-      <button id="lang-toggle" class="tooltip" data-tooltip="Chuyển ngôn ngữ">🌐</button>
-      <nav>
-        <ul>
-          <li><a href="#gioithieu">Giới thiệu</a></li>
-          <li><a href="#kynang">Kỹ năng</a></li>
-          <li><a href="#duan">Dự án</a></li>
-          <li><a href="#hocvan">Học vấn</a></li>
-          <li><a href="#lienhe">Liên hệ</a></li>
-        </ul>
-      </nav>
+  <nav>
+    <div>
+      <span class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></span>
+      <span class="language-toggle" onclick="toggleLanguage()"><i class="fas fa-language"></i></span>
     </div>
-    <svg viewBox="0 0 1440 320" class="wave-svg"><path fill="#fff" fill-opacity="0.1" d="M0,96L60,112C120,128,240,160,360,186.7C480,213,600,235,720,213.3C840,192,960,128,1080,101.3C1200,75,1320,85,1380,90.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    <ul>
+      <li><a href="#about">Giới thiệu</a></li>
+      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#projects">Dự án</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+  </nav>
+  <header>
+    <div class="content" data-aos="fade-up">
+      <h1>Xin chào! Tôi là <span class="highlight">Lê Minh Khôi</span></h1>
+      <p>Người đam mê công nghệ và thiết kế.</p>
+      <a href="#contact" class="btn">Liên hệ ngay</a>
+    </div>
   </header>
 
-  <main class="container">
-    <section id="gioithieu" class="boxed-section" data-aos="fade-up">
-      <h2>🧑‍💻 Giới thiệu</h2>
-      <p>Tôi là sinh viên ngành Khoa học Máy tính tại Đại học Văn Lang. Tôi đam mê công nghệ, dữ liệu và thiết kế giao diện.</p>
-      <img src="images/avatar.jpg" alt="Ảnh đại diện" class="avatar" />
+  <main>
+    <section id="about" data-aos="fade-right">
+      <h2>Ối nội dung giới thiệu bản thân tại đây</h2>
     </section>
 
-    <section id="kynang" class="boxed-section" data-aos="fade-up">
-      <h2>🛠️ Kỹ năng</h2>
+    <section id="skills" data-aos="fade-left">
+      <h2>Kỹ năng</h2>
       <ul>
         <li>Python, JavaScript, Java</li>
-        <li>Phân tích dữ liệu: Pandas, NumPy, Matplotlib</li>
-        <li>HTML, CSS, Bootstrap, Responsive Design</li>
-        <li>Git, GitHub, CI/CD cơ bản</li>
-        <li>OpenCV, TensorFlow cơ bản</li>
+        <li>TensorFlow, OpenCV, Pandas</li>
+        <li>HTML, CSS, Responsive Design</li>
       </ul>
     </section>
 
-    <section id="duan" class="boxed-section" data-aos="fade-up">
-      <h2>🚀 Dự án</h2>
-      <div id="projects" class="grid"></div>
-    </section>
-
-    <section id="hocvan" class="boxed-section" data-aos="fade-up">
-      <h2>🎓 Học vấn</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Đại học Văn Lang</h3>
-            <p>2022 - Nay: Khoa Kỹ thuật Cơ - Điện & Máy tính</p>
-          </div>
+    <section id="projects" data-aos="zoom-in">
+      <h2>Dự án</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Phát hiện lao phổi</h3>
+          <p>Mô hình Deep Learning nhận diện lao qua ảnh X-quang.</p>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>THPT Cà Mau</h3>
-            <p>2019 - 2022: TP. Cà Mau</p>
-          </div>
+        <div class="card">
+          <h3>Trang web portfolio</h3>
+          <p>Trang cá nhân giới thiệu và liên hệ nhanh chính chủ.</p>
         </div>
       </div>
     </section>
 
-    <section id="lienhe" class="boxed-section" data-aos="fade-up">
-      <h2>📬 Liên hệ</h2>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Tên của bạn" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Nội dung" required></textarea>
-        <button type="submit">Gửi</button>
-      </form>
-      <p><strong>Hoặc:</strong></p>
-      <ul>
-        <li>📧 khoi.2274601080008@vanlanguni.vn</li>
-        <li><a href="https://facebook.com/le.khoi.1202" target="_blank">Facebook</a></li>
-        <li><a href="https://github.com/gouenji92" target="_blank">GitHub</a></li>
-        <li><a href="https://kaggle.com/khil2131" target="_blank">Kaggle</a></li>
-      </ul>
+    <section id="contact" data-aos="fade-up">
+      <h2>Liên hệ</h2>
+      <p>Gửi email: khoi.2274601080008@vanlanguni.vn</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Lê Minh Khôi. All rights reserved.</p>
+    &copy; 2025 Lê Minh Khôi. All rights reserved.
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    function toggleLanguage() {
+      const lang = document.documentElement.lang === 'vi' ? 'en' : 'vi';
+      document.documentElement.lang = lang;
+      alert("Tính năng đang được phát triển!");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+      }
+    });
+  </script>
 </body>
 </html>
