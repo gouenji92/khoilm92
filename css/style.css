@@ -12,7 +12,7 @@ body.dark {
 }
 
 body {
-  font-family: 'Courier Prime', monospace;
+  font-family: Consolas, 'Courier New', Courier, monospace;
   font-size: 18px;
   background: var(--bg);
   color: var(--text);
@@ -125,4 +125,16 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Tất cả chữ màu trắng */
+h1, h2, h3, h4, h5, h6,
+p, li, a, span, strong {
+  color: white;
+}
+
+/* Đảm bảo link không đổi màu khi click */
+a:link, a:visited {
+  color: white;
+  text-decoration: underline;
 }
