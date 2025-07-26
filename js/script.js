@@ -86,3 +86,35 @@ function loop() {
   setTimeout(loop, isDeleting ? 40 : 100);
 }
 loop();
+
+// AOS initialization
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
+// GitHub Repos Fetcher
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector("#projects .grid");
+  fetch("https://api.github.com/users/gouenji92/repos")
+    .then(res => res.json())
+    .then(data => {
+      data.slice(0, 6).forEach(repo => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<h3>${repo.name}</h3><p>${repo.description || "Không có mô tả."}</p><a href="${repo.html_url}" target="_blank">Xem GitHub</a>`;
+        container.appendChild(card);
+      });
+    });
+});
+
+// Language toggle
+const langToggle = document.getElementById("lang-toggle");
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    const html = document.documentElement;
+    const isVI = html.lang === "vi";
+    html.lang = isVI ? "en" : "vi";
+    location.reload(); // Optional: load translated content dynamically instead
+  });
+}
