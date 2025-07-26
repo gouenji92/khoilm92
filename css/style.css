@@ -208,6 +208,11 @@ form input, form textarea {
   color: white;
   font-size: 1.1rem;
 }
+form input::placeholder,
+form textarea::placeholder {
+  color: #ffffffcc;
+  opacity: 1;
+}
 form textarea {
   resize: vertical;
   min-height: 100px;
